@@ -1,0 +1,62 @@
+
+
+<html>
+    <head>
+        <style>
+            *{
+                margin:0;
+                left:0;
+                box-sizing:border-box;
+            }
+            #main{
+                position: absolute;
+                top:50%;
+                left:40%;
+            }
+            body{
+                background: #6eb1d2 ;
+            }
+            #clock{
+                background:#0ba7f5   ;
+                width: 300px;
+                height:50px;
+                text-align:center;
+                font-size:40px;
+                color:white;
+                backdrop-filter:blur(40px);
+                box-shadow: 0 0 10px #474d50 ;
+                border-radius:10px;
+            }
+        
+            
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <div id="clock">
+                <span id="hrs">00</span>
+                <span>:</span>
+                <span id="min">00</span>
+                <span>:</span>
+                <span id="sec">00</span>
+            </div>
+        </div>
+        <script>
+            let hrs=document.getElementById("hrs");
+            let min=document.getElementById("min");
+            let sec=document.getElementById("sec");
+            function update()
+            {
+                let currentdate=new Date();
+            
+            hrs.innerHTML=(currentdate.getHours()<10?"0":"")+currentdate.getHours();
+            min.innerHTML=(currentdate.getMinutes()<10?"0":"")+currentdate.getMinutes();
+            sec.innerHTML=(currentdate.getSeconds()<10?"0":"")+currentdate.getSeconds();
+            }
+            
+            setInterval(update,1000);
+            
+            update();
+        </script>
+    </body>
+</html>
